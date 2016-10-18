@@ -12,6 +12,8 @@ public class Ball : MonoBehaviour {
 	// variable to store my rigid body component
 	private Rigidbody2D myRigidBody;
 
+	public Transform restartLine;
+
 	// how much power is the shot?
 	public int shootPower = 1000;
 
@@ -44,6 +46,12 @@ public class Ball : MonoBehaviour {
 			// and the strength of the force (the magnitude of the vector)
 			// is our variable shootPower
 			myRigidBody.AddForce(direction*shootPower);
+		}
+
+		if (transform.position.y < restartLine.position.y) {
+			myRigidBody.velocity = Vector2.zero;
+			hasBeenFired = false;
+
 		}
 	}
 }
