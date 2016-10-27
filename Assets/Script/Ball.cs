@@ -49,6 +49,7 @@ public class Ball : MonoBehaviour {
 		}
 
 		if (transform.position.y < restartLine.position.y) {
+			
 			myRigidBody.velocity = Vector2.zero;
 			hasBeenFired = false;
 
